@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} From {% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock css %}
+{% block content %}
+<section id="student">
+    <div class="student-profile py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent text-center">
+                            <div class="cards-img"> <img class="profile_img" src="{{prof.image.url}}" alt=""></div>
+
+                            <h3>{{prof.name}}</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0"><strong class="pr-1">Student ID: </strong>{{prof.student_id}}</p>
+                            <p class="mb-0"><strong class="pr-1">Semester: </strong>{{prof.semester}}</p>
+                            <p class="mb-0"><strong class="pr-1">Section: </strong>{{prof.section}}</p>
+                            <p class="mb-0"><strong class="pr-1">Shift: </strong>{{prof.shift}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent border-0">
+                            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                        </div>
+                        <div class="card-body pt-0">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="30%">Name</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.name}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Email</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.email}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Phone</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.phone}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Roll</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.roll}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Academic Year </th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.academicYear}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Gender</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.gender}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Religion</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.religion}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">blood</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.blood}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">GPA</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.gpa}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Age</th>
+                                    <td width="2%">:</td>
+                                    <td>{{prof.age}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

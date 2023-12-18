@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} Home {% endblock %} 
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" /> {% endblock css %}
+{% block content %}
+<section id="student">
+  <div class="student-profile py-4">
+    <div class="container">
+      <div class="row">
+        {% for prof in prof %}
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent text-center">
+              <div class="cards-img">
+                <a href="{% url 'profileDetails' prof.id %}"
+                  ><img class="profile_img" src="{{prof.image.url}}" alt=""
+                /></a>
+              </div>
+              <h3>{{prof.name}}</h3>
+            </div>
+            <div class="card-body">
+              <p class="mb-0">
+                <strong class="pr-1">Student ID: </strong>{{prof.student_id}}
+              </p>
+              <p class="mb-0">
+                <strong class="pr-1">Semester: </strong>{{prof.semester}}
+              </p>
+              <p class="mb-0">
+                <strong class="pr-1">Section: </strong>{{prof.section}}
+              </p>
+              <p class="mb-0">
+                <strong class="pr-1">Shift: </strong>{{prof.shift}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
